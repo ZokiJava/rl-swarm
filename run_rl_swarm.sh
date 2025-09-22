@@ -231,16 +231,11 @@ fi
 echo_green ">> Done!"
 
 
+# 自动设置为不推送模型到Hugging Face Hub（无需用户输入）
 echo -en $GREEN_TEXT
-read -p ">> Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] " yn
+ echo ">> Skipping Hugging Face Hub setup. Models will NOT be pushed to Hugging Face Hub."
 echo -en $RESET_TEXT
-yn=${yn:-N} # Default to "N" if the user presses Enter
-case $yn in
-    [Yy]*) read -p "Enter your Hugging Face access token: " HUGGINGFACE_ACCESS_TOKEN ;;
-    [Nn]*) HUGGINGFACE_ACCESS_TOKEN="None" ;;
-    *) echo ">>> No answer was given, so NO models will be pushed to Hugging Face Hub" && HUGGINGFACE_ACCESS_TOKEN="None" ;;
-esac
-
+HUGGINGFACE_ACCESS_TOKEN="None"
 
 echo -en $GREEN_TEXT
 read -p ">> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. " MODEL_NAME
@@ -265,7 +260,8 @@ fi
 
 echo -en $RESET_TEXT
 echo_green ">> Good luck in the swarm!"
-echo_blue ">> And remember to star the repo on GitHub! --> https://github.com/gensyn-ai/rl-swarm"
+echo_green ">> And remember to view My Webside! --> https://zokigame.online"
+echo_blue ">> And remember to star to repo in --> https://github.com/gensyn-ai/rl_swarm"
 
 python -m rgym_exp.runner.swarm_launcher \
     --config-path "$ROOT/rgym_exp/config" \
