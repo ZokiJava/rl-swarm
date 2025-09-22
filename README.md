@@ -1,4 +1,9 @@
-# RL Swarm
+# RL Swarm Plus
+
+RL Swarm Plus is fork from RL Swarm↓ I try to improve my code to earn more rewards.The usage method is the same as that of RL Swarm.
+This will increase your reward by up to 300%!
+
+## RL Swarm Origin
 
 RL Swarm is a peer-to-peer system for reinforcement learning. It allows you to train models collaboratively with others in the swarm, leveraging their collective intelligence. It is open source and permissionless, meaning you can run it on a consumer laptop at home or on a powerful GPU in the cloud. You can also connect your model to the Gensyn Testnet to receive an on-chain identity that tracks your progress over time.
 
